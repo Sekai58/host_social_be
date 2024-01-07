@@ -83,7 +83,7 @@ export const forgetPassword = async (user:Partial<loginParams>)=>{
                 subject: 'Password Reset',
                 html: `
                   <p>You've requested a password reset for your account.</p>
-                  <p>Click <a href="http://localhost:5173/resetpassword?token=${token}">here</a> to reset your password.</p>
+                  <p>Click <a href="https://socialsyncfe.onrender.com/resetpassword?token=${token}">here</a> to reset your password.</p>
                 `,
               };
               

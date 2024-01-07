@@ -124,7 +124,9 @@ export const updateProfile = async(user:Partial<registerParams>,file:any,id:any)
         if(checkUser){
             const _id = new ObjectId(id)
             if(file!==""){
-                const imageURL = `http://localhost:${env.PORT}/uploaded/${file}`
+                // const imageURL = `http://localhost:${env.PORT}/uploaded/${file}`                
+                const imageURL = `https://socialsyncfe.onrender.com/uploaded/${file}`
+
                 const updateUser = await User.updateOne({"_id":_id},{ $set: { url:imageURL,fullName:user.fullName } },{new:true})
             }
             else{

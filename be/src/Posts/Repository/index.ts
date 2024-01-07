@@ -23,7 +23,9 @@ export const uploadPost = async(id:ObjectId,content:string,file:any)=>{
             return addedPost
         }
         else{
-            const imageURL = `http://localhost:${env.PORT}/uploaded/${file}`
+            // const imageURL = `http://localhost:${env.PORT}/uploaded/${file}`           
+            const imageURL = `https://socialsyncfe.onrender.com/uploaded/${file}`
+
             const newPost = await new Post({userId:id,content:content,photo:imageURL})
             const insertedPost = await newPost.save()
             const addedPost  = await Post.findById(insertedPost._id)
